@@ -1,5 +1,3 @@
-let hookRegistered = false;
-
 function chudy_change_roll(result){
     if(result >= 90 && result < 100){
         result -= 80;
@@ -34,10 +32,5 @@ function chudy_hook(testData, cardOptions){
     
 }
 
-if (!hookRegistered) {
-    Hooks.on('wfrp4e:rollTest', chudy_hook);
-    hookRegistered = true;
-    alert('Szczęśliwe kości Chudego zainstalowano pomyślnie');
-}else{
-    alert('Szczęśliwe kości Chudego zostały już wcześniej zainstalowane');
-}
+Hooks.on('wfrp4e:rollTest', chudy_hook);
+alert('Szczęśliwe kości Chudego zainstalowano pomyślnie');
